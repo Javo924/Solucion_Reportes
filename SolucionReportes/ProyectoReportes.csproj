@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Reportes\" />
+    <None Remove="Views\Sandbox\" />
+    <None Remove="IronPdf" />
+    <None Remove="Rotativa" />
+    <None Remove="Rotativa.AspNetCore" />
+    <None Remove="Rotativa.MVC" />
+    <None Remove="DinkToPdf" />
+    <None Remove="LibreriaPDF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Reportes\" />
+    <Folder Include="Views\Sandbox\" />
+    <Folder Include="LibreriaPDF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Program.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DinkToPdf" Version="1.0.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="LibreriaPDF\libwkhtmltox.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LibreriaPDF\libwkhtmltox.dylib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LibreriaPDF\libwkhtmltox.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
